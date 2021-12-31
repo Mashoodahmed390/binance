@@ -16,6 +16,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::post('signup', [UserController::class,'signup']);
-Route::get('/verifyEmail/{email}/{token}', [UserController::class,'verify']);
+Route::get('/verifyEmail/{email}/{token}', [UserController::class,'verifyemail']);
+Route::get('/verifyphone', [UserController::class,'verifyphone']);
 Route::post('login', [UserController::class,'login'])->middleware('login');
+Route::post('/forgetpassword', [UserController::class,'forgetpassword'])->middleware("forgetpassword");
 

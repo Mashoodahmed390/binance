@@ -25,7 +25,7 @@ class LoginUserMiddlerware
             {
                 if(Hash::check($request["password"], $user->password))
             {
-                if(!($user->verify))
+                if(!($user->verifyemail))
                 {
                     return response()->error('Account not verified',400);
                 }
