@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'login'=> \App\Http\Middleware\LoginUserMiddlerware::class,
         'forgetpassword'=> \App\Http\Middleware\forgetpasswordmiddlerware::class,
+        'Jwt'=> \App\Http\Middleware\JwtMiddleware::class,
     ];
 }

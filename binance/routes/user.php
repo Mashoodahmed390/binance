@@ -20,4 +20,10 @@ Route::get('/verifyEmail/{email}/{token}', [UserController::class,'verifyemail']
 Route::get('/verifyphone', [UserController::class,'verifyphone']);
 Route::post('login', [UserController::class,'login'])->middleware('login');
 Route::post('/forgetpassword', [UserController::class,'forgetpassword'])->middleware("forgetpassword");
+Route::put('updatepassword/{email}/{token}', [UserController::class,'updatepassword']);
 
+Route::middleware(['Jwt'])->group(function (){
+Route::post('upload/profile/photo', [UserController::class,'profilephoto']);
+Route::post('upload/doucment/photo', [UserController::class,'documentphoto']);
+Route::post('upload/id/photo', [UserController::class,'idphoto']);
+});

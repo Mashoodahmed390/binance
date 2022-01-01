@@ -43,4 +43,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function authentication()
+    {
+        return $this->hasOne(Authentication::class);
+    }
+    public function kyc()
+    {
+        return $this->hasOne(Kyc::class);
+    }
 }
